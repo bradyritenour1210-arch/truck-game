@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>JavaScript Test</h1>
-<div id="test">Loading...</div>
+<h1>Three.js Test</h1>
+<div id="status">Loading...</div>
 
-<script>
-document.getElementById("test").innerText = "JavaScript is working!";
+<script type="module">
+try {
+  const THREE = await import('https://unpkg.com/three@0.160.0/build/three.module.js');
+  document.getElementById('status').innerText =
+    'Three.js loaded successfully!';
+} catch (e) {
+  document.getElementById('status').innerText =
+    'Three.js FAILED to load.';
+}
 </script>
 
 </body>
